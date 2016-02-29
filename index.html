@@ -1,0 +1,129 @@
+       <form action="" method="POST" class="form-horizontal" role="form" autocomplete="off">
+                        {% csrf_token %}
+                        <div class="row">
+
+                            <div class="clearfix">
+                                <div class="col-sm-6">
+                                    <label class="control-label col-sm-3" style="text-align: left;">نام :</label>
+
+                                    <div class="col-sm-9">
+
+                                        <input id="firstname" type="text" class="form-control FirstName"
+                                               name="FirstName"
+                                               maxlength="50" value="{{ EditContactModel.name }}">
+                                        <span id="msgErrorFirstname" class="msgerror"> لطفا نام را وارد کنید </span>
+                                    <span id="msgErrorTagFirstname"
+                                          class="msgerror"> این کاراکترها غیرمجاز می باشند </span>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6">
+                                    <label class="control-label col-sm-3" style="text-align: left;">نام خانوادگی
+                                        :</label>
+
+                                    <div class="col-sm-9">
+                                        <input id="lastname" type="text" class="form-control LastName" name="LastName"
+                                               maxlength="50" value="{{ EditContactModel.family }}">
+                                        <span id="msgErrorLastname"
+                                              class="msgerror"> لطفا نام خانوادگی را وارد کنید </span>
+                                    <span id="msgErrorTagLastname"
+                                          class="msgerror"> این کاراکترها غیرمجاز می باشند </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clearfix">
+                                <div class="col-sm-6">
+                                    <div class="col-sm-3 dropleft">
+                                        <div class="dropcontrol">
+
+                                            <select id="droptest_0" class="btn-primary droptext">
+                                                <li>
+                                                    <option value="0">انتخاب کنید</option>
+                                                </li>
+                                                <li>
+
+                                                    <option class="mobile" value="1">موبایل</option>
+
+
+                                                </li>
+                                                <li>
+                                                    <option class="telephone" value="2">تلفن ثابت</option>
+
+                                                </li>
+                                                <li>
+                                                    <option class="Email" value="3">ایمیل</option>
+                                                </li>
+                                                <li>
+                                                    <option class="contactaddress" value="4">سایر</option>
+                                                </li>
+                                            </select>
+
+                                            <div class="input-group">
+                                                <span id="entererror_0" class="msgerror"> لطفا انتخاب کنید</span>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-9">
+                                        <div class="controls">
+                                            <input id="x_0" attr="x_0" type="text" class="form-control conn"
+                                                   name="Connect" maxlength="50" value="{{ listcontact.contactInfo }}"
+                                                   placeholder="لطفا راه ارتباطی مورد نظر را وارد کنید">
+                                        </div>
+                                        <span id="msgErrorConntact_0"
+                                              class="msgerror"> لطفا راه ارتباطی را وارد کنید </span>
+                                        <span id="msgErrorTagConntact_0"
+                                              class="msgerror"> این کاراکترها غیرمجاز می باشند </span>
+
+                                    <span id="warningaddress_0"
+                                          class="msgerror">توجه : راه ارتباطی به دلخواه وارد گردد</span>
+                                        <span id="errornumber_0" class="msgerror"> لطفا عدد وارد کنید </span>
+                                        <span id="emailerror_0" class="msgerror">لطفا ایمیل را صحیح وارد کنید</span>
+
+                                    </div>
+                                    <br/>
+                                </div>
+                                <div class="col-sm-6 desc">
+                                    <label class="control-label col-sm-3" style="text-align: left;">
+                                        توضیحات :
+                                    </label>
+
+                                    <div class="col-sm-9">
+
+                                        <div class="entry input-group">
+                                            <input id="y_0" attr="y_0" type="text" class="form-control decrept"
+                                                   name="decrept" maxlength="100" value="{{ listcontact.description }}">
+
+                                            <div class="input-group-addon btn-add">
+                                                <span class="glyphicon glyphicon-plus"></span>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="entry input-group ">
+
+                                        <span id="msgErrorDescript_0"
+                                              class="msgerror"> لطفا توضیحات را وارد کنید </span>
+                                        <span id="msgErrorTagDescript_0"
+                                              class="msgerror"> این کاراکترها غیرمجاز می باشند </span>
+                                        <span class="input-group-btn">
+
+                                        </span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div id="append">
+
+                            </div>
+                            <div class="col-sm-12">
+                                <div class="upload-action">
+                                    <button id="send" type="button" class="btn btn-primary">ثبت</button>
+                                </div>
+                            </div>
+
+                        </div>
+                        {#                        {% endfor %}#}
+                    </form>
