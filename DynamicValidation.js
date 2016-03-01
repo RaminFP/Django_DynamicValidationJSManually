@@ -23,16 +23,7 @@ var i;
 $(document).ready(function () {
 
 
-    $("#activedash").removeClass("active");
-    $("#activereport").removeClass("active");
-    $("#activepackages").removeClass("active");
-    $("#activeaccount").removeClass("active");
-    $("#activereport").removeClass("active");
-    $("#activeupload").removeClass("active");
-    $("#activepay").removeClass("active");
-    $("#activecontact").addClass("active");
-
-    function getCookie(name) {
+    function getCookie(name) { 
         var cookieValue = null;
         if (document.cookie && document.cookie != '') {
             var cookies = document.cookie.split(';');
@@ -44,8 +35,7 @@ $(document).ready(function () {
                 }
             }
         }
-        return cookieValue;
-    }
+        return cookieValue; }
 
     var csrftoken = getCookie('csrftoken');
 
@@ -55,7 +45,7 @@ $(document).ready(function () {
         }
     });
 
-    $("#send").click(function () {
+    $("#send").click(function () { 
 
         for (i=0;i<counter;i++) {
 
@@ -226,11 +216,8 @@ $(document).ready(function () {
             }
             else
                 return false;
-        }
-        AjaxContact(jsonitem);
-    });
-
-    $(function () {
+        } });
+    $(function () { 
         $(document).on('click', '.btn-add', function (e) {
             var inputstyle =
 
@@ -299,73 +286,17 @@ $(document).ready(function () {
             var attr = $(this).attr('attr');
             $('div[attr=' + attr + ']').remove();
 
-        });
-    });
+        }); });
 });
 
 
-    model = Jsonmodel;
-    $.ajax({
-        url: "/api/contact",
-        datatype: 'json',
-        type: 'POST',
-        data: {'contactmodel[]': JSON.stringify(model)},
-        success: function (data) {
-            $(".seccuess").html(data).show();
-            $("#firstname").val("");
-            $("#lastname").val("");
-            //X_Connect.val("");
-            //Y_Description.val("");
-        },
-        error: function (data) {
-
-            if (data.status == 400) {
-                $(".errormsg").html(data.responseText).show();
-                $("#firstname").val("");
-                $("#lastname").val("");
-                $("#connect").val("");
-                $("#decreption").val("");
-            }
-            if (data.status == 401) {
-
-                $(".errormsg").html(data.responseText).show();
-                $("#firstname").val("");
-                $("#lastname").val("");
-                $("#connect").val("");
-                $("#decreption").val("");
-            }
-            if (data.status == 402) {
-
-                $(".errormsg").html(data.responseText).show();
-                $("#firstname").val("");
-                $("#lastname").val("");
-                $("#connect").val("");
-                $("#decreption").val("");
-            }
-
-            if (data.status == 404) {
-                $(".errormsg").html(data.responseText).show()
-                $("#firstname").val("");
-                $("#lastname").val("");
-                $("#connect").val("");
-                $("#decreption").val("");
-            }
-
-        }
-    });
-}
-
-function NumberValidation(conn_num) {
-
-
+function NumberValidation(conn_num){
     var mobile = conn_num;
     var re = /^\d+$/;
     if (re.test(mobile))
         return true;
     else
         return false
-
-
 }
 
 function EmailValidation(conn_email) {
@@ -377,8 +308,6 @@ function EmailValidation(conn_email) {
         return true;
     else
         return false
-
-
 }
 
 function CheckLength(conn, descrip) {
